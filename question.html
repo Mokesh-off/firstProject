@@ -1,0 +1,827 @@
+<html>
+<style type="text/css">
+
+	.q-left{
+		height: 100vh;
+	    width: 50vw;
+	    text-align: center;
+	    float: left;	
+	}
+	.q-right{
+		height: 100vh;
+		width: 50vw;
+		float: left;
+		color: white;
+	}
+	.right-one{
+		text-align: center;
+	}
+	.q-right{
+		background-color: #2a7c96;
+	}
+	.margin{
+		margin-top:80px;
+	}
+	.Answer-1{
+		margin-left: 40px;
+	}
+	.Answer-options{
+		border-radius: 50%;
+		height: 30px;
+		width: 30px;
+	}
+	hr{
+		height: 1px;
+	}
+
+	ul{
+		list-style-type:none;
+	}
+	li{
+		padding:30px 0px	;
+		  #  padding: 30px 0px;
+	    border-bottom: 1px solid #ffffff;
+
+	}
+	li:hover{
+		background-color: white;
+		color: black;
+		cursor: pointer;
+	}
+	li:hover .Answer-options{
+		background-color: deeppink;
+	}
+	#prev1,#prev2,#prev3,#prev4,#prev5,#prev6,#prev7,#prev8,#next1,#next2,#next3,#next4,#next5,#next6,#next7{
+		display: none;
+		cursor: pointer;
+	}
+	#prev1,#prev2,#prev3,#prev4,#prev5,#prev6,#prev7,#prev8,#next1,#next2,#next3,#next4,#next5,#next6,#next7:hover{
+		color: #b4cce0;
+	}
+
+	.dot {
+	  cursor: pointer;
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+	  background-color: #717171;
+	}
+
+	/*icon*/
+	.right-first{
+    display: flex;
+    flex-direction: row-reverse;
+    }
+
+    .icon{
+        #float: right;
+        background-color: #4CAF50; /* Green */
+        #border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        height: 24px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .menu{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    }
+
+        /*dialog box style start*/
+
+        .container{
+      float:none;
+      margin:auto;
+      text-align:center
+    }
+    .container>.overly{
+      width:300px;
+      height:80px;
+      font-size:25px;
+      cursor:pointer
+    }
+    .modalbox {
+        min-width: 100%;
+        position: fixed;
+ 
+
+        top: -100px;
+        right: -200px;
+        bottom: 0;
+        left: -180px;
+
+        background: rgba(81, 51, 51, 0.5);
+        z-index: 99999;
+        pointer-events: auto;
+        display:none;
+        overflow-y:auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .modalbox >.dialog {
+        max-width: 100%;
+        position: relative;
+        top: 10px;
+        margin: 5% 10%;
+        padding: 5px 20px 13px 20px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 0 10px #000000;
+        -moz-box-shadow: 0 0 10px #000000;
+        -webkit-box-shadow: 0 0 10px #000000;
+        display: block;
+        pointer-events: auto;
+    }
+
+    .closebutton {
+        float: right;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .6;
+        z-index: 9999;
+      cursor:pointer
+    }
+
+    .text-2{
+        text-align: center;
+        font-size: 70px;
+        color: black;
+        font-weight: 900;
+    }
+    #id,.text-2:hover{
+        color: lightblue;
+    }
+
+    /*dialog box style end*/
+
+
+
+	/*icon end*/
+	.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 50px solid #555;
+	border-bottom: 25px solid transparent;
+	}
+
+	/*.Answer-options:hover{
+		background-color: deeppink;
+	}*/
+</style>
+<body>
+<div  id="question-1" style="display: flex;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+			<a id="prev1" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 1/7</big>
+			<a id="next1" onclick="nextSlides()">&#10095;</a>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question1.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">YOU HAD A HOLIDAY ROMANCE AND YOUR NEXT STEP WILL BE..</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>
+
+		</div>
+	</div>
+	<div class="q-right">
+
+
+            	<div id="ogrooModel" class="modalbox ogroobox" >
+              		<div class="dialog">
+              		  <button  title="Close" onClick="overlay()"  class="closebutton" id="close">X</button>
+               		   <div  style="height: 100vh;width: 100vw">
+                		<p class="text-2">HOME</p>
+                		<p class="text-2">TAKE THE TEST</p>
+               		    <p class="text-2">EXPLORE CHARACTERS</p>
+               		    <p class="text-2">LEARN MORE</p>
+                       </div>
+                    </div>
+               </div>
+
+			    <div class="right-first" style="margin-left: 610px;margin-top: 5px;">
+                    <div class="icon container" id="Overly" class="overly">
+                    <div style="margin-top: 0px" class="menu"></div>
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                    </div>
+            	</div>
+		
+		<div class="right-one" style="margin-top: 22px;">
+			
+			<big>Select Answer below</big>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">JUST GO FOR IT AND ... FORGET ABOUT IT AFTERWARDS.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">SPEND TIME TOGETHER AND JUST REMEMBER THE SWEET MEMORY.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">SEE WHERE IT LEADS, MAYBE IT WILL WORK OUT FOR US.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">DROP EVERYTHING AND DIVE INTO A NEW RELATIONSHIP I AM SURE THIS IS LOVE.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+<div id="question-2" style="display: none;">
+		<div class="q-left">
+		<div class="left-one margin">
+			
+			<a id="prev2" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 2/7</big>
+			<a id="next2" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question2.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">IMAGINE YOU ACCIDENTALLY SNEEZE ON YOUR BOSS. YOU THINK:</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>		
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">THIS IS SO EMBARRASING, IT'LL TAKE SOME TIME TO LIVE DOWN THE EMBARRASSMENT.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">I'LL MAKE A JOKE OUT OF IT. MAYBE HE HAS A SENSE OF HUMOUR</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">WELL, IT IS JUST A SNEEZE I DON'T CARE.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">I AM THE BOSS - I CAN SNEEZE ON MYSELF WHENEVER I WANT.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div  id="question-3" style="display: none;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+			
+			<a id="prev3" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 3/7</big>
+			<a id="next3" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question3.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">WHAT'S THE MOST IMPORTANT THING TO TAKE WITH YOU ON A WALK?</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>	
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">UMBRELLA, SCARF, SUNGLASSES AND HAT. THE WEATHER IS UNPREDICTABLE.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">A STYLISH CANE.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">A CUTE TERRIER PUUPY. I CAN' GO ANYWHERE WITHOUR HIM!.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">SOMETHING FOR SELF PROTECTION, MAYBE A GUN.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+<div  id="question-4" style="display: none;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+
+			<a id="prev4" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 4/7</big>
+			<a id="next4" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question4.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">A SUSPICIOUS LOOKING STRANGER OFFERS YOU A LIFT. YOU:</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>	
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">FEARLESSLY GET IN AND START A CONVERSATION WITH HIM.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">GET IN AND SAY NOTHING, AS IF EVERYTHING'S PERFECTLY FINE.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">GET IN AND TELL HIM ABOUT YOUR FIGHTING SKILLS, EVEN THOUGH THE LAST FIGHT YOU WON WAS IN GRADE SCHOOL.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">ACCEPT THE OFFER BUT GET OUT AT THE FIRST OPPORTUNITY.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+<div  id="question-5" style="display: none;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+
+			<a id="prev5" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 5/7</big>
+			<a id="next5" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question5.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">YOU MEET A FRIEND YOU HAVEN'T SEEN FOR TWENTY YEARS. HE IS RICH AND POWERFUL NOW. WHAT DO YOU DO?</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>	
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">I THINK TO MYSELF, SURE, I COULD HAVE BEEN LIKE HIM... ATLEAST I'M NOT FAT!</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">I THINK THAT THE SOURCE OF HIS SUCCESS ARE HIS CONNECTIONS AND NOTHING MORE.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">I THINK."GOOD FOR YOU, BUT AT LEAST I HAVE PLENTY OF SPARE TIME!"</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">I TEASE HIM ABOUT HIS PAUNCH AND WE REMININSCE TOGETHER ABOUT THE GOOD OLD DAYS.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<div  id="question-6" style="display: none;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+
+			<a id="prev6" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 6/7</big>
+			<a id="next6" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question6.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">YOU'RE SWIMMING IN THE RIVER AND SOMEONE STEALS YOUR CLOTHES.YOU DECIDE..</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six" style="background-color: #717171;"></span> 
+			  <span class="dot" id="dot_seven"></span> 
+			</div>	
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul onclick="switchID()">
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">HIDE UNDER A BRIDGE AND WAIT FOR HELP.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">RUN HOME AS FAST AS YOU CAN THROUGH BUSHES SO NO ONE SEES YOU.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">QUIETLY HEAD HOME. WHO CARES IF ANYONE SEES ME?.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">JUMP OUT AND RUN AFTER THE THEIVES!.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<div  id="question-7" style="display: none;">
+
+	<div class="q-left">
+		<div class="left-one margin">
+
+			<a id="prev7" onclick="plusSlides()">&#10094;</a>
+			<big style="color: #ea3ad6;">Question 7/7</big>
+			<a id="next7" onclick="nextSlides()">&#10095;</a>
+
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: #ea3ad6;">
+		</div>
+		<div class="left-two margin">
+			<i><img src="question7.png" width="300" height="300" /></i>
+		</div>
+		<div class="left-three margin">
+			<p style="font-weight: bold;">WHAT WILL YOU THINK WHEN SOMENONE DECIDES TO CUT DOWN THE CHERRY ORCHARD NEAR YOUR HOUSE?</p>
+		</div>
+		<div class="left-four margin">
+
+			<div style="text-align:center">
+			  <span class="dot" id="dot_one"></span> 
+			  <span class="dot" id="dot_two"></span> 
+			  <span class="dot" id="dot_three"></span> 
+			  <span class="dot" id="dot_four"></span> 
+			  <span class="dot" id="dot_five"></span> 
+			  <span class="dot" id="dot_six"></span> 
+			  <span class="dot" id="dot_seven" style="background-color: #717171;"></span> 
+			</div>	
+
+		</div>
+	</div>
+	<div class="q-right">
+		
+		<div class="right-one margin">
+			<p>Select Answer below</p>
+			<hr style="margin-left: 260px;margin-right: 260px;background-color: white;">
+		</div>
+
+		<div class="right-two margin">
+			<ul>
+
+				<li>
+					<span><button class="Answer-options">A</button></span>
+					<span><small class="Answer-1">SOMEONE'S FINALLY DONE IT! NOW WE CAN MAKE SOMETHING USEFUL HERE.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">B</button></span>
+					<span><small class="Answer-1">THAT'S OK, IT'LL GROW BACK.</small></span>
+					
+				</li>
+
+				<li>
+					<span><button class="Answer-options">C</button></span>
+					<span><small class="Answer-1">THAT'S TOO BAD. WE USED TO PLAY THERE WHEN WE WERE KIDS.</small></span>
+					
+				</li>	
+
+				<li>
+					<span><button class="Answer-options">D</button></span>
+					<span><small class="Answer-1">MY LIFE IS RUINED. THAT ORCHARD WAS EVERYTHING FOR ME.</small></span>
+					
+				</li>					
+
+			</ul>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+	        // onClick function
+	        var x=2;//to move next slide
+	        var a='question-'+1;
+	        var count=0;
+        function switchID() {
+        	
+        	// document.getElementById('question-1').style.display = 'none';
+         // 	document.getElementById('question-3').style.display = 'flex';
+        	//alert('hi');
+        	
+        	var b='question-'+x;//next page
+        	var c='prev'+x;
+        	var y=x-1
+        	var a='question-'+y;
+        	
+        	//break here
+        	//alert(c);
+        	//alert(b);
+        	//alert(x);
+        	x++;
+
+        	if(x<=8){
+        	        	
+        	document.getElementById(a).style.display = 'none';
+            document.getElementById(b).style.display = 'flex';
+            document.getElementById(c).style.display = 'inline';
+            count++;
+
+        	}
+        // 	if(x<=7){
+        // 	var a='question-'+x;
+        // 	x++;
+        // }
+        //     if (document.getElementById(a)) {
+        //     	document.getElementById('a').style.display=='flex';
+
+
+                // if (document.getElementById('question-1').style.display == 'none') {
+                //     document.getElementById('question-1').style.display = 'flex';
+                //     document.getElementById('question-2').style.display = 'none';
+                // }
+                // else {
+                //     document.getElementById('question-1').style.display = 'none';
+                //     document.getElementById('question-2').style.display = 'flex';
+                // }
+            }
+            function plusSlides(){
+            	//alert(x);
+            	var aa=x-1;
+            	var bb=x-2;
+            	var cc='next'+bb;
+            	x=x-1;
+            	var d='question-'+aa;
+            	var e='question-'+bb;
+            	document.getElementById(d).style.display = 'none';
+            	document.getElementById(e).style.display = 'flex';
+            	document.getElementById(cc).style.display='inline';
+            }
+            function nextSlides(){
+            	//alert(x);
+            	var dd='question-'+x;
+            	var ee='question-'+(x-1);
+            	document.getElementById(ee).style.display = 'none';
+            	document.getElementById(dd).style.display = 'flex';
+            }
+
+         	function dotSlide(n){
+         		alert(n);
+         		alert(x);
+         		alert('count'+count);
+         		var ff='question-'+n;
+         		var gg='question-'+(x-1);
+            	document.getElementById(gg).style.display = 'none';
+            	document.getElementById(ff).style.display = 'flex';         		
+         	}
+
+
+
+        document.getElementById("Overly").addEventListener("click", function(){
+         var e =document.getElementsByClassName("modalbox");
+
+                e[0].style.display = 'block';
+           
+        })  ;
+        document.getElementById("close").addEventListener("click", function(){
+           var e =document.getElementsByClassName("modalbox");
+         e[0].style.display= 'none';
+        });
+        
+</script>
+
+            <script type="text/javascript">
+            //only javascript
+
+        	</script>
+</body>
+</html>
